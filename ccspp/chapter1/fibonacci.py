@@ -37,9 +37,9 @@ def fib5(n: int) -> int:
     next: int = 1
     for _ in range(1, n):
         last, next = next, last + next
-        yield next
+        # yield next
+    return next
 
 
 if __name__ == '__main__':
-    for n in fib5(int(argv[1])):
-        print(n)
+    print(fib5(int(argv[1])))
