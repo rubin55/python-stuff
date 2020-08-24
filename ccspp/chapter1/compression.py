@@ -2,6 +2,7 @@
 
 from sys import getsizeof
 
+
 class CompressedGene:
     def __init__(self, gene: str) -> None:
         self._compress(gene)
@@ -21,7 +22,7 @@ class CompressedGene:
             else:
                 raise ValueError("Invalid nucleotide: {}".format(n))
 
-    def _decompress(self) -> str:
+    def decompress(self) -> str:
         gene: str = ''
         for i in range(0, self.bit_string.bit_length() - 1, 2):
             b: int = self.bit_string >> i & 0b11
@@ -38,7 +39,8 @@ class CompressedGene:
         return gene[::-1]
 
     def __str__(self) -> str:
-        return self._decompress()
+        return self.decompress()
+
 
 if __name__ == "__main__":
     original: str = "TAGGGATTAACCGTTATATATATATAGCCATGGATCGATTATATAGGGATTAACCGTTATATATATATAGCCATGGATCGATTATA" * 100
@@ -48,6 +50,4 @@ if __name__ == "__main__":
     print("Compressed string is {} bytes".format(getsizeof(compressed.bit_string)))
 
     print("Decompressed string looks like: {}".format(compressed))
-    print("Original and (de)compressed are the same: {}".format(original == compressed._decompress()))
-
-
+    print("Original and (de)compressed are the same: {}".format(original == compressed.decompress()))
