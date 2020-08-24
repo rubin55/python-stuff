@@ -45,9 +45,9 @@ if __name__ == "__main__":
     print("Original string is {} bytes".format(getsizeof(original)))
 
     compressed: CompressedGene = CompressedGene(original)
-    print("Compressed string is {} bytes".format(getsizeof(compressed)))
+    print("Compressed string is {} bytes".format(getsizeof(compressed.bit_string)))
 
-    print(compressed)
+    print("Decompressed string looks like: {}".format(compressed))
     print("Original and (de)compressed are the same: {}".format(original == compressed._decompress()))
 
 
