@@ -4,6 +4,7 @@ from typing import TypeVar, Generic, List
 
 T = TypeVar('T')
 
+
 class Stack(Generic[T]):
 
     def __init__(self) -> None:
@@ -17,6 +18,7 @@ class Stack(Generic[T]):
 
     def __repr__(self) -> str:
         return repr(self._container)
+
 
 def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
     if n == 1:
