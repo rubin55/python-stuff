@@ -1,6 +1,6 @@
 jupyter
 matplotlib
-numpy
+numpy==1.18.5
 pandas
 scikit-learn
 scipy
