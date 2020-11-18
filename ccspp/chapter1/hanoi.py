@@ -28,6 +28,7 @@ def hanoi(begin: Stack[int], end: Stack[int], temp: Stack[int], n: int) -> None:
         hanoi(begin, end, temp, 1)
         hanoi(temp, end, begin, n - 1)
 
+
 num_discs: int = 3
 
 tower_a: Stack[int] = Stack()

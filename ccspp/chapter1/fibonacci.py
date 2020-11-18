@@ -30,15 +30,15 @@ def fib4(n: int) -> int:
     return fib4(n - 1) + fib4(n - 2)
 
 
-def fib5(n: int) -> int:
-    if n == 0:
-        return n
-    last: int = 0
-    next: int = 1
-    for _ in range(1, n):
-        last, next = next, last + next
-        # yield next
-    return next
+def fib5(i: int) -> int:
+    if i == 0:
+        return i
+    l: int = 0
+    n: int = 1
+    for _ in range(1, i):
+        l, n = n, l + n
+        # yield n
+    return n
 
 
 if __name__ == '__main__':
